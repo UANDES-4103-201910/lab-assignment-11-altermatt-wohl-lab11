@@ -31,12 +31,11 @@
         </table>
       </div>
     </div>
+    <% if can? :create, Event %>
+      <button><%= link_to 'New Event', new_event_path %></button>
+    <% end %>
 </div>
-  <% if can? :create, Event %>
-    <div class="jumbotron">
-        <button><%= link_to 'New Event', new_event_path %></button>
-    </div> 
-  <% end %>
+  
 
 <br>
 
