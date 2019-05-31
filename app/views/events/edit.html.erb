@@ -1,6 +1,25 @@
 <h1>Editing Event</h1>
+<div class="row">
+  <div class=" col-lg-2 col-md-2 col-sm-2">
+    <div class="jumbotron">
+      
+    </div>
+  </div>
+  <div class="col-lg-8 col-md-8 col-sm-8">
+    <div class="jumbotron">
+     <%= render 'form', event: @event %>
+	 <button><%= link_to 'Show', @event %></button>	 
+	 <button><%= link_to 'Back', events_path %></button> 
+    </div>
+    </div>    
+    <div class="col-lg-2 col-md-2 col-sm-2">
+      <div class="jumbotron">
+        
+      </div>
+    </div>
+</div>
+  
 
-<%= render 'form', event: @event %>
+<br>
 
-<%= link_to 'Show', @event %> |
-<%= link_to 'Back', events_path %>
+

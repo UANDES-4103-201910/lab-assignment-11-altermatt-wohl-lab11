@@ -1,12 +1,47 @@
-<p>The contents of your shopping cart are as follows:</p>
+<div class="row">
+  <div class=" col-lg-2 col-md-2 col-sm-2">
+    <div class="jumbotron">
+      
+    </div>
+  </div>
+  <div class="col-lg-8 col-md-8 col-sm-8">
+    <div class="jumbotron">
+    	<p>The contents of your shopping cart are as follows:</p>
+    	<div class="table-responsive">
+        <table class="table table-dark table-hover table-bordered">
+          <thead> 
+          	<tr>
+              <th>Nombre</th>
+              <th>Descripción</th>
+              <th>Lugar</th>
+              <th>Fecha</th>
+              <th>cantidad de entradas</th>
+            </tr>
+          </thead>
+          <tbody>
+          	<%shopping_cart_get_tickets().each do |k,v| %>
+          	<tr>
+          		<td><%=TicketType.find(k).event.name%></td>
+          		<td><%=TicketType.find(k).event.start_date.in_time_zone()%></td>
+          		<td><%=TicketType.find(k).ticket_zone.zone%></td>
+          		<td><%=TicketType.find(k).price%></td>
+          		<td><%=v%></td>
+				<%end%>
+          	</tr>
+          </tbody>
+      	</table>
+  		</div>
+    	<button><%= link_to 'Back', :back %></button> 
+    </div>
+    </div>    
+    <div class="col-lg-2 col-md-2 col-sm-2">
+      <div class="jumbotron">
+        
+      </div>
+    </div>
+</div>
 
-<ul>
-<%shopping_cart_get_tickets().each do |k,v| %>
-  <li><%=TicketType.find(k).event.name%>, <%=TicketType.find(k).event.start_date.in_time_zone()%>, <%=TicketType.find(k).ticket_zone.zone%>, <%=TicketType.find(k).price%>, <%=v%></li>
-<%end%>
-</ul>
 
-<%= link_to 'Back', :back %>
 
 <!-- TODO: remove items from cart -->
 <!-- TODO: button for placing order -->

@@ -1,5 +1,6 @@
 <% if can? :create, Order %>
-<li>
-  <%=link_to('Cart', '/shopping_cart') %> (<%=shopping_cart_how_many_tickets()%>)
-</li>
+    <li>
+      <button><%=link_to('Cart', '/shopping_cart') %></button> 
+       (<%=shopping_cart_how_many_tickets()%>)
+    </li>
 <% end %>

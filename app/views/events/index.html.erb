@@ -1,27 +1,45 @@
 <p id="notice"><%= notice %></p>
+<div class="row">
+  <div class=" col-lg-2 col-md-2 col-sm-2">
+    <div class="jumbotron">
+      
+    </div>
+  </div>
+  <div class="col-lg-8 col-md-8 col-sm-8">
+    <div class="jumbotron">
+     <h1>Events</h1>
+     <div class="table-responsive">
+       <table class="table table-dark table-hover table-bordered">
+        <thead>
+          <tr>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
 
-<h1>Events</h1>
+        <tbody>
+          <% @events.each do |event| %>
+            <tr>
+              <td><%= event.name %></td>
+              <td><%= event.description %></td>
+              <td><%= link_to 'Show', event %></td>
+              <td><%= link_to 'Edit', edit_event_path(event) %></td>
+              <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>z
+        </tbody>
+      </table>
+     </div>
+    <button><%= link_to 'New Event', new_event_path %></button> 
+    </div>
+  </div>    
+    <div class="col-lg-2 col-md-2 col-sm-2">
+      <div class="jumbotron">
+        
+      </div>
+    </div>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @events.each do |event| %>
-      <tr>
-        <td><%= event.name %></td>
-        <td><%= event.description %></td>
-        <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>z
-  </tbody>
-</table>
 
 <br>
 
-<%= link_to 'New Event', new_event_path %>
+
