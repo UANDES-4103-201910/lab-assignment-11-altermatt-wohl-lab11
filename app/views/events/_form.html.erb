@@ -11,15 +11,25 @@
       </ul>
     </div>
   <% end %>
-
-  <%= form.label :name %>
-  <%= form.text_field :name %>
-  <%= form.label :description %>
-  <%= form.text_area :description, cols: 60, rows: 10 %>
-  <%= form.label :start_date %>
-  <%= date_select :event, :start_date %>
-  <%= form.label :event_venue_id %>
-  <%= form.select(:event_venue_id, options_from_collection_for_select(EventVenue.all, :id, :name))%>
+  <div class = "field">
+	  <%= form.label :name %>
+	  <%= form.text_field :name %>
+  </div>
+  <div class = "field">
+  	<%= form.label :description %>
+  	<%= form.text_area :description, cols: 60, rows: 10 %>
+  <div class = "field">  
+	<%= form.label :start_date %>
+  	<%= date_select :event, :start_date %>
+  </div 
+  <div class = "field">
+  	<%= form.label :event_venue_id %>
+  	<%= form.select(:event_venue_id, 		  options_from_collection_for_select(EventVenue.all, :id, :name))%>
+  </div>  
+  <div class = "field">
+  	<%= form.label :image %>
+  	<%= form.file_field :image %>
+  </div>
 
   <div class="actions">
     <%= form.submit %>

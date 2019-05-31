@@ -7067,3 +7067,1131 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (23.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@uandes.cl"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (115.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (15.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20190329134320)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "lastname" varchar, "address" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190329134320_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190329134320"]]
+  ↳ bin/rails:9
+  [1m[35m (8.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateEventVenues (20190329134334)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "event_venues" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "address" varchar, "capacity" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190329134334_create_event_venues.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190329134334"]]
+  ↳ bin/rails:9
+  [1m[35m (10.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateEvents (20190329134423)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "events" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" varchar, "start_date" date, "event_venue_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_07a8e73ad7"
+FOREIGN KEY ("event_venue_id")
+  REFERENCES "event_venues" ("id")
+)[0m
+  ↳ db/migrate/20190329134423_create_events.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_events_on_event_venue_id" ON "events" ("event_venue_id")[0m
+  ↳ db/migrate/20190329134423_create_events.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190329134423"]]
+  ↳ bin/rails:9
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateTicketZones (20190329134615)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "ticket_zones" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "zone" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190329134615_create_ticket_zones.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190329134615"]]
+  ↳ bin/rails:9
+  [1m[35m (8.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateTicketTypes (20190329134642)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "ticket_types" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "event_id" integer, "price" integer, "ticket_zone_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_3f5bd3dab9"
+FOREIGN KEY ("event_id")
+  REFERENCES "events" ("id")
+, CONSTRAINT "fk_rails_0920abe530"
+FOREIGN KEY ("ticket_zone_id")
+  REFERENCES "ticket_zones" ("id")
+)[0m
+  ↳ db/migrate/20190329134642_create_ticket_types.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_ticket_types_on_event_id" ON "ticket_types" ("event_id")[0m
+  ↳ db/migrate/20190329134642_create_ticket_types.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_ticket_types_on_ticket_zone_id" ON "ticket_types" ("ticket_zone_id")[0m
+  ↳ db/migrate/20190329134642_create_ticket_types.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190329134642"]]
+  ↳ bin/rails:9
+  [1m[35m (8.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateOrders (20190329134721)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "orders" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_f868b47f6a"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  ↳ db/migrate/20190329134721_create_orders.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_orders_on_user_id" ON "orders" ("user_id")[0m
+  ↳ db/migrate/20190329134721_create_orders.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190329134721"]]
+  ↳ bin/rails:9
+  [1m[35m (7.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateTickets (20190329134851)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "tickets" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "ticket_type_id" integer, "order_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_89217f3a4e"
+FOREIGN KEY ("ticket_type_id")
+  REFERENCES "ticket_types" ("id")
+, CONSTRAINT "fk_rails_c6410ba81d"
+FOREIGN KEY ("order_id")
+  REFERENCES "orders" ("id")
+)[0m
+  ↳ db/migrate/20190329134851_create_tickets.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_tickets_on_ticket_type_id" ON "tickets" ("ticket_type_id")[0m
+  ↳ db/migrate/20190329134851_create_tickets.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_tickets_on_order_id" ON "tickets" ("order_id")[0m
+  ↳ db/migrate/20190329134851_create_tickets.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190329134851"]]
+  ↳ bin/rails:9
+  [1m[35m (12.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to AddDeviseToUsers (20190528154045)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "email" varchar DEFAULT '' NOT NULL[0m
+  ↳ db/migrate/20190528154045_add_devise_to_users.rb:7
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "users" ADD "encrypted_password" varchar DEFAULT '' NOT NULL[0m
+  ↳ db/migrate/20190528154045_add_devise_to_users.rb:8
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_token" varchar[0m
+  ↳ db/migrate/20190528154045_add_devise_to_users.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_sent_at" datetime[0m
+  ↳ db/migrate/20190528154045_add_devise_to_users.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "remember_created_at" datetime[0m
+  ↳ db/migrate/20190528154045_add_devise_to_users.rb:15
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  ↳ db/migrate/20190528154045_add_devise_to_users.rb:40
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  ↳ db/migrate/20190528154045_add_devise_to_users.rb:41
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190528154045"]]
+  ↳ bin/rails:9
+  [1m[35m (12.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to AddRoleToUsers (20190528185615)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ADD "role" varchar[0m
+  ↳ db/migrate/20190528185615_add_role_to_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190528185615"]]
+  ↳ bin/rails:9
+  [1m[35m (10.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-05-31 20:53:36.839612"], ["updated_at", "2019-05-31 20:53:36.839612"]]
+  ↳ bin/rails:9
+  [1m[35m (10.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@uandes.cl"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (1.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "lastname", "address", "created_at", "updated_at", "email", "encrypted_password", "role") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Administrator"], ["lastname", "User"], ["address", "San Carlos de Apoquindo"], ["created_at", "2019-05-31 20:53:40.254947"], ["updated_at", "2019-05-31 20:53:40.254947"], ["email", "admin@uandes.cl"], ["encrypted_password", "$2a$11$NmbTg3eczW1I6KL5WDJOeOOZsqB2bZ/Xtnx0dqbued2itMtVyMSUW"], ["role", "administrator"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (27.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "reguser@miuandes.cl"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "lastname", "address", "created_at", "updated_at", "email", "encrypted_password") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Registered"], ["lastname", "User"], ["address", "San Carlos de Apoquindo"], ["created_at", "2019-05-31 20:53:40.286799"], ["updated_at", "2019-05-31 20:53:40.286799"], ["email", "reguser@miuandes.cl"], ["encrypted_password", "$2a$11$oFf/ECnZZoNQJZeqaUpkX.8NrSRvbuYVWagnMMMWldADWRGdrZGGG"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "reguser2@miuandes.cl"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "lastname", "address", "created_at", "updated_at", "email", "encrypted_password") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Registered"], ["lastname", "User 2"], ["address", "San Carlos de Apoquindo"], ["created_at", "2019-05-31 20:53:40.295862"], ["updated_at", "2019-05-31 20:53:40.295862"], ["email", "reguser2@miuandes.cl"], ["encrypted_password", "$2a$11$vF/dcdnj.SKNvW3JcsGbeuHEdwn.XaHkEelsYzFnRhUHt7MdzgKFG"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (7.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:28
+  [1m[36mEventVenue Create (0.3ms)[0m  [1m[32mINSERT INTO "event_venues" ("name", "address", "capacity", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Estadio Nacional"], ["address", "Maraton"], ["capacity", 60000], ["created_at", "2019-05-31 20:53:40.330074"], ["updated_at", "2019-05-31 20:53:40.330074"]]
+  ↳ db/seeds.rb:28
+  [1m[35m (6.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:28
+  [1m[36mEventVenue Create (0.3ms)[0m  [1m[32mINSERT INTO "event_venues" ("name", "address", "capacity", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Estadio Monumental"], ["address", "Exequiel"], ["capacity", 25000], ["created_at", "2019-05-31 20:53:40.339086"], ["updated_at", "2019-05-31 20:53:40.339086"]]
+  ↳ db/seeds.rb:28
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:28
+  [1m[36mEventVenue Create (0.2ms)[0m  [1m[32mINSERT INTO "event_venues" ("name", "address", "capacity", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Movistar Arena"], ["address", "Matta"], ["capacity", 15000], ["created_at", "2019-05-31 20:53:40.346776"], ["updated_at", "2019-05-31 20:53:40.346776"]]
+  ↳ db/seeds.rb:28
+  [1m[35m (4.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:39
+  [1m[36mEvent Create (0.7ms)[0m  [1m[32mINSERT INTO "events" ("name", "description", "start_date", "event_venue_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Festival de la Cancion"], ["description", "Puro reggaeton"], ["start_date", "2019-09-01"], ["event_venue_id", 1], ["created_at", "2019-05-31 20:53:40.423746"], ["updated_at", "2019-05-31 20:53:40.423746"]]
+  ↳ db/seeds.rb:39
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:39
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:39
+  [1m[36mEvent Create (0.3ms)[0m  [1m[32mINSERT INTO "events" ("name", "description", "start_date", "event_venue_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Twisted Sister"], ["description", "Puro rock"], ["start_date", "2019-10-01"], ["event_venue_id", 2], ["created_at", "2019-05-31 20:53:40.434043"], ["updated_at", "2019-05-31 20:53:40.434043"]]
+  ↳ db/seeds.rb:39
+  [1m[35m (4.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:39
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:39
+  [1m[36mEvent Create (0.3ms)[0m  [1m[32mINSERT INTO "events" ("name", "description", "start_date", "event_venue_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Bad Bunny"], ["description", "Puro Trap"], ["start_date", "2019-11-01"], ["event_venue_id", 3], ["created_at", "2019-05-31 20:53:40.441309"], ["updated_at", "2019-05-31 20:53:40.441309"]]
+  ↳ db/seeds.rb:39
+  [1m[35m (4.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:39
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:47
+  [1m[36mTicketZone Create (0.3ms)[0m  [1m[32mINSERT INTO "ticket_zones" ("zone", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["zone", "Cancha"], ["created_at", "2019-05-31 20:53:40.474124"], ["updated_at", "2019-05-31 20:53:40.474124"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (8.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:47
+  [1m[36mTicketZone Create (0.4ms)[0m  [1m[32mINSERT INTO "ticket_zones" ("zone", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["zone", "Pacifico"], ["created_at", "2019-05-31 20:53:40.486006"], ["updated_at", "2019-05-31 20:53:40.486006"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (8.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:47
+  [1m[36mTicketZone Create (0.4ms)[0m  [1m[32mINSERT INTO "ticket_zones" ("zone", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["zone", "Pacifico VIP"], ["created_at", "2019-05-31 20:53:40.497915"], ["updated_at", "2019-05-31 20:53:40.497915"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (12.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:63
+  [1m[36mTicketType Create (0.5ms)[0m  [1m[32mINSERT INTO "ticket_types" ("event_id", "price", "ticket_zone_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["event_id", 1], ["price", 20000], ["ticket_zone_id", 1], ["created_at", "2019-05-31 20:53:40.544821"], ["updated_at", "2019-05-31 20:53:40.544821"]]
+  ↳ db/seeds.rb:63
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:63
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:63
+  [1m[36mTicketType Create (0.3ms)[0m  [1m[32mINSERT INTO "ticket_types" ("event_id", "price", "ticket_zone_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["event_id", 1], ["price", 30000], ["ticket_zone_id", 2], ["created_at", "2019-05-31 20:53:40.554538"], ["updated_at", "2019-05-31 20:53:40.554538"]]
+  ↳ db/seeds.rb:63
+  [1m[35m (4.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:63
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:63
+  [1m[36mTicketType Create (0.3ms)[0m  [1m[32mINSERT INTO "ticket_types" ("event_id", "price", "ticket_zone_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["event_id", 1], ["price", 40000], ["ticket_zone_id", 3], ["created_at", "2019-05-31 20:53:40.561667"], ["updated_at", "2019-05-31 20:53:40.561667"]]
+  ↳ db/seeds.rb:63
+  [1m[35m (4.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:63
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:63
+  [1m[36mTicketType Create (0.4ms)[0m  [1m[32mINSERT INTO "ticket_types" ("event_id", "price", "ticket_zone_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["event_id", 2], ["price", 20000], ["ticket_zone_id", 1], ["created_at", "2019-05-31 20:53:40.568448"], ["updated_at", "2019-05-31 20:53:40.568448"]]
+  ↳ db/seeds.rb:63
+  [1m[35m (4.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:63
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:63
+  [1m[36mTicketType Create (0.5ms)[0m  [1m[32mINSERT INTO "ticket_types" ("event_id", "price", "ticket_zone_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["event_id", 2], ["price", 30000], ["ticket_zone_id", 2], ["created_at", "2019-05-31 20:53:40.581083"], ["updated_at", "2019-05-31 20:53:40.581083"]]
+  ↳ db/seeds.rb:63
+  [1m[35m (6.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:63
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:63
+  [1m[36mTicketType Create (0.3ms)[0m  [1m[32mINSERT INTO "ticket_types" ("event_id", "price", "ticket_zone_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["event_id", 2], ["price", 40000], ["ticket_zone_id", 3], ["created_at", "2019-05-31 20:53:40.590212"], ["updated_at", "2019-05-31 20:53:40.590212"]]
+  ↳ db/seeds.rb:63
+  [1m[35m (4.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:63
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:63
+  [1m[36mTicketType Create (0.3ms)[0m  [1m[32mINSERT INTO "ticket_types" ("event_id", "price", "ticket_zone_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["event_id", 3], ["price", 20000], ["ticket_zone_id", 1], ["created_at", "2019-05-31 20:53:40.597086"], ["updated_at", "2019-05-31 20:53:40.597086"]]
+  ↳ db/seeds.rb:63
+  [1m[35m (4.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:63
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:63
+  [1m[36mTicketType Create (0.3ms)[0m  [1m[32mINSERT INTO "ticket_types" ("event_id", "price", "ticket_zone_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["event_id", 3], ["price", 30000], ["ticket_zone_id", 2], ["created_at", "2019-05-31 20:53:40.604008"], ["updated_at", "2019-05-31 20:53:40.604008"]]
+  ↳ db/seeds.rb:63
+  [1m[35m (5.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:63
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:63
+  [1m[36mTicketType Create (0.3ms)[0m  [1m[32mINSERT INTO "ticket_types" ("event_id", "price", "ticket_zone_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["event_id", 3], ["price", 40000], ["ticket_zone_id", 3], ["created_at", "2019-05-31 20:53:40.611711"], ["updated_at", "2019-05-31 20:53:40.611711"]]
+  ↳ db/seeds.rb:63
+  [1m[35m (4.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:63
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:69
+  [1m[36mOrder Create (1.0ms)[0m  [1m[32mINSERT INTO "orders" ("user_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["user_id", 1], ["created_at", "2019-05-31 20:53:40.653727"], ["updated_at", "2019-05-31 20:53:40.653727"]]
+  ↳ db/seeds.rb:69
+  [1m[35m (8.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:69
+  [1m[36mTicketType Load (0.2ms)[0m  [1m[34mSELECT "ticket_types".* FROM "ticket_types" WHERE "ticket_types"."event_id" = ?[0m  [["event_id", 1]]
+  ↳ db/seeds.rb:71
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:73
+  [1m[36mTicket Create (0.4ms)[0m  [1m[32mINSERT INTO "tickets" ("ticket_type_id", "order_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["ticket_type_id", 3], ["order_id", 1], ["created_at", "2019-05-31 20:53:40.687261"], ["updated_at", "2019-05-31 20:53:40.687261"]]
+  ↳ db/seeds.rb:73
+  [1m[35m (7.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:73
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:69
+  [1m[36mOrder Create (0.3ms)[0m  [1m[32mINSERT INTO "orders" ("user_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["user_id", 1], ["created_at", "2019-05-31 20:53:40.697586"], ["updated_at", "2019-05-31 20:53:40.697586"]]
+  ↳ db/seeds.rb:69
+  [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:69
+  [1m[36mTicketType Load (0.2ms)[0m  [1m[34mSELECT "ticket_types".* FROM "ticket_types" WHERE "ticket_types"."event_id" = ?[0m  [["event_id", 2]]
+  ↳ db/seeds.rb:71
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:73
+  [1m[36mTicket Create (0.3ms)[0m  [1m[32mINSERT INTO "tickets" ("ticket_type_id", "order_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["ticket_type_id", 6], ["order_id", 2], ["created_at", "2019-05-31 20:53:40.706152"], ["updated_at", "2019-05-31 20:53:40.706152"]]
+  ↳ db/seeds.rb:73
+  [1m[35m (5.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:73
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:69
+  [1m[36mOrder Create (0.3ms)[0m  [1m[32mINSERT INTO "orders" ("user_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["user_id", 1], ["created_at", "2019-05-31 20:53:40.714312"], ["updated_at", "2019-05-31 20:53:40.714312"]]
+  ↳ db/seeds.rb:69
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:69
+  [1m[36mTicketType Load (0.2ms)[0m  [1m[34mSELECT "ticket_types".* FROM "ticket_types" WHERE "ticket_types"."event_id" = ?[0m  [["event_id", 3]]
+  ↳ db/seeds.rb:71
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:73
+  [1m[36mTicket Create (0.3ms)[0m  [1m[32mINSERT INTO "tickets" ("ticket_type_id", "order_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["ticket_type_id", 8], ["order_id", 3], ["created_at", "2019-05-31 20:53:40.724762"], ["updated_at", "2019-05-31 20:53:40.724762"]]
+  ↳ db/seeds.rb:73
+  [1m[35m (6.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:73
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:69
+  [1m[36mOrder Create (0.3ms)[0m  [1m[32mINSERT INTO "orders" ("user_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["user_id", 2], ["created_at", "2019-05-31 20:53:40.733899"], ["updated_at", "2019-05-31 20:53:40.733899"]]
+  ↳ db/seeds.rb:69
+  [1m[35m (5.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:69
+  [1m[36mTicketType Load (0.1ms)[0m  [1m[34mSELECT "ticket_types".* FROM "ticket_types" WHERE "ticket_types"."event_id" = ?[0m  [["event_id", 1]]
+  ↳ db/seeds.rb:71
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:73
+  [1m[36mTicket Create (0.3ms)[0m  [1m[32mINSERT INTO "tickets" ("ticket_type_id", "order_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["ticket_type_id", 1], ["order_id", 4], ["created_at", "2019-05-31 20:53:40.748039"], ["updated_at", "2019-05-31 20:53:40.748039"]]
+  ↳ db/seeds.rb:73
+  [1m[35m (8.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:73
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:69
+  [1m[36mOrder Create (0.5ms)[0m  [1m[32mINSERT INTO "orders" ("user_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["user_id", 2], ["created_at", "2019-05-31 20:53:40.758643"], ["updated_at", "2019-05-31 20:53:40.758643"]]
+  ↳ db/seeds.rb:69
+  [1m[35m (5.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:69
+  [1m[36mTicketType Load (0.1ms)[0m  [1m[34mSELECT "ticket_types".* FROM "ticket_types" WHERE "ticket_types"."event_id" = ?[0m  [["event_id", 2]]
+  ↳ db/seeds.rb:71
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:73
+  [1m[36mTicket Create (0.3ms)[0m  [1m[32mINSERT INTO "tickets" ("ticket_type_id", "order_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["ticket_type_id", 4], ["order_id", 5], ["created_at", "2019-05-31 20:53:40.768034"], ["updated_at", "2019-05-31 20:53:40.768034"]]
+  ↳ db/seeds.rb:73
+  [1m[35m (5.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:73
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:69
+  [1m[36mOrder Create (0.3ms)[0m  [1m[32mINSERT INTO "orders" ("user_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["user_id", 2], ["created_at", "2019-05-31 20:53:40.775972"], ["updated_at", "2019-05-31 20:53:40.775972"]]
+  ↳ db/seeds.rb:69
+  [1m[35m (5.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:69
+  [1m[36mTicketType Load (0.1ms)[0m  [1m[34mSELECT "ticket_types".* FROM "ticket_types" WHERE "ticket_types"."event_id" = ?[0m  [["event_id", 3]]
+  ↳ db/seeds.rb:71
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:73
+  [1m[36mTicket Create (0.3ms)[0m  [1m[32mINSERT INTO "tickets" ("ticket_type_id", "order_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["ticket_type_id", 9], ["order_id", 6], ["created_at", "2019-05-31 20:53:40.784566"], ["updated_at", "2019-05-31 20:53:40.784566"]]
+  ↳ db/seeds.rb:73
+  [1m[35m (4.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:73
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:69
+  [1m[36mOrder Create (0.3ms)[0m  [1m[32mINSERT INTO "orders" ("user_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["user_id", 3], ["created_at", "2019-05-31 20:53:40.791829"], ["updated_at", "2019-05-31 20:53:40.791829"]]
+  ↳ db/seeds.rb:69
+  [1m[35m (4.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:69
+  [1m[36mTicketType Load (0.1ms)[0m  [1m[34mSELECT "ticket_types".* FROM "ticket_types" WHERE "ticket_types"."event_id" = ?[0m  [["event_id", 1]]
+  ↳ db/seeds.rb:71
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:73
+  [1m[36mTicket Create (0.3ms)[0m  [1m[32mINSERT INTO "tickets" ("ticket_type_id", "order_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["ticket_type_id", 3], ["order_id", 7], ["created_at", "2019-05-31 20:53:40.802142"], ["updated_at", "2019-05-31 20:53:40.802142"]]
+  ↳ db/seeds.rb:73
+  [1m[35m (7.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:73
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:69
+  [1m[36mOrder Create (0.3ms)[0m  [1m[32mINSERT INTO "orders" ("user_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["user_id", 3], ["created_at", "2019-05-31 20:53:40.811623"], ["updated_at", "2019-05-31 20:53:40.811623"]]
+  ↳ db/seeds.rb:69
+  [1m[35m (5.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:69
+  [1m[36mTicketType Load (0.1ms)[0m  [1m[34mSELECT "ticket_types".* FROM "ticket_types" WHERE "ticket_types"."event_id" = ?[0m  [["event_id", 2]]
+  ↳ db/seeds.rb:71
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:73
+  [1m[36mTicket Create (0.3ms)[0m  [1m[32mINSERT INTO "tickets" ("ticket_type_id", "order_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["ticket_type_id", 4], ["order_id", 8], ["created_at", "2019-05-31 20:53:40.820093"], ["updated_at", "2019-05-31 20:53:40.820093"]]
+  ↳ db/seeds.rb:73
+  [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:73
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:69
+  [1m[36mOrder Create (0.3ms)[0m  [1m[32mINSERT INTO "orders" ("user_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["user_id", 3], ["created_at", "2019-05-31 20:53:40.827727"], ["updated_at", "2019-05-31 20:53:40.827727"]]
+  ↳ db/seeds.rb:69
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:69
+  [1m[36mTicketType Load (0.1ms)[0m  [1m[34mSELECT "ticket_types".* FROM "ticket_types" WHERE "ticket_types"."event_id" = ?[0m  [["event_id", 3]]
+  ↳ db/seeds.rb:71
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:73
+  [1m[36mTicket Create (0.3ms)[0m  [1m[32mINSERT INTO "tickets" ("ticket_type_id", "order_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["ticket_type_id", 9], ["order_id", 9], ["created_at", "2019-05-31 20:53:40.837054"], ["updated_at", "2019-05-31 20:53:40.837054"]]
+  ↳ db/seeds.rb:73
+  [1m[35m (5.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:73
+Started GET "/" for 127.0.0.1 at 2019-05-31 16:54:16 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vawohl/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (start_date >= '2019-05-31 20:54:16.688410')[0m
+  ↳ app/views/home/index.html.erb:23
+  [1m[36mEventVenue Load (0.2ms)[0m  [1m[34mSELECT  "event_venues".* FROM "event_venues" WHERE "event_venues"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:27
+  [1m[36mEventVenue Load (0.1ms)[0m  [1m[34mSELECT  "event_venues".* FROM "event_venues" WHERE "event_venues"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:27
+  [1m[36mEventVenue Load (0.1ms)[0m  [1m[34mSELECT  "event_venues".* FROM "event_venues" WHERE "event_venues"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:27
+  Rendered home/index.html.erb within layouts/application (134.0ms)
+  Rendered devise/menu/_registration_items.html.erb (0.8ms)
+  Rendered shopping_carts/_shopping_cart.html.erb (4.6ms)
+  Rendered devise/menu/_login_items.html.erb (2.1ms)
+Completed 200 OK in 2991ms (Views: 2948.0ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/css/custom.css" for 127.0.0.1 at 2019-05-31 16:54:20 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/custom.css"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-05-31 17:00:16 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (85.9ms)
+  Rendered devise/menu/_registration_items.html.erb (0.7ms)
+  Rendered shopping_carts/_shopping_cart.html.erb (1.1ms)
+  Rendered devise/menu/_login_items.html.erb (0.8ms)
+Completed 200 OK in 209ms (Views: 201.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-05-31 17:01:15 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wEP5j2JnhVyq0SFOlfX931A2ll5O8bmO6TKTY6S7dZTsPYrvMWtjDfZTwT+b2vQu2REGD5pZ4BagDGDFegamVg==", "user"=>{"email"=>"admin@uandes.cl", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@uandes.cl"], ["LIMIT", 1]]
+  ↳ /home/vawohl/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 260ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-05-31 17:01:15 -0400
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (start_date >= '2019-05-31 21:01:15.796377')[0m
+  ↳ app/views/home/index.html.erb:23
+  [1m[36mEventVenue Load (0.2ms)[0m  [1m[34mSELECT  "event_venues".* FROM "event_venues" WHERE "event_venues"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:27
+  [1m[36mEventVenue Load (0.3ms)[0m  [1m[34mSELECT  "event_venues".* FROM "event_venues" WHERE "event_venues"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:27
+  [1m[36mEventVenue Load (0.1ms)[0m  [1m[34mSELECT  "event_venues".* FROM "event_venues" WHERE "event_venues"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:27
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:41
+  Rendered home/index.html.erb within layouts/application (13.0ms)
+  Rendered devise/menu/_registration_items.html.erb (0.9ms)
+  Rendered shopping_carts/_shopping_cart.html.erb (1.6ms)
+  Rendered devise/menu/_login_items.html.erb (1.0ms)
+Completed 200 OK in 105ms (Views: 101.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/css/custom.css" for 127.0.0.1 at 2019-05-31 17:01:16 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/custom.css"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/events/new" for 127.0.0.1 at 2019-05-31 17:01:31 -0400
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vawohl/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering events/new.html.erb within layouts/application
+  [1m[36mEventVenue Load (0.2ms)[0m  [1m[34mSELECT "event_venues".* FROM "event_venues"[0m
+  ↳ app/views/events/_form.html.erb:22
+  Rendered events/_form.html.erb (32.2ms)
+  Rendered events/new.html.erb within layouts/application (44.4ms)
+  Rendered devise/menu/_registration_items.html.erb (0.7ms)
+  Rendered shopping_carts/_shopping_cart.html.erb (1.5ms)
+  Rendered devise/menu/_login_items.html.erb (0.8ms)
+Completed 200 OK in 181ms (Views: 150.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2019-05-31 17:02:02 -0400
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vawohl/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering events/new.html.erb within layouts/application
+  [1m[36mEventVenue Load (0.3ms)[0m  [1m[34mSELECT "event_venues".* FROM "event_venues"[0m
+  ↳ app/views/events/_form.html.erb:22
+  Rendered events/_form.html.erb (8.5ms)
+  Rendered events/new.html.erb within layouts/application (10.7ms)
+  Rendered devise/menu/_registration_items.html.erb (0.6ms)
+  Rendered shopping_carts/_shopping_cart.html.erb (1.0ms)
+  Rendered devise/menu/_login_items.html.erb (0.9ms)
+Completed 200 OK in 90ms (Views: 83.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events/css/custom.css" for 127.0.0.1 at 2019-05-31 17:02:02 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/events/css/custom.css"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/events/new" for 127.0.0.1 at 2019-05-31 17:04:23 -0400
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vawohl/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering events/new.html.erb within layouts/application
+  [1m[36mEventVenue Load (0.1ms)[0m  [1m[34mSELECT "event_venues".* FROM "event_venues"[0m
+  ↳ app/views/events/_form.html.erb:22
+  Rendered events/_form.html.erb (10.8ms)
+  Rendered events/new.html.erb within layouts/application (12.7ms)
+  Rendered devise/menu/_registration_items.html.erb (0.9ms)
+  Rendered shopping_carts/_shopping_cart.html.erb (1.0ms)
+  Rendered devise/menu/_login_items.html.erb (0.7ms)
+Completed 200 OK in 102ms (Views: 97.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events/css/custom.css" for 127.0.0.1 at 2019-05-31 17:04:23 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/events/css/custom.css"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/events/new" for 127.0.0.1 at 2019-05-31 17:04:30 -0400
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vawohl/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering events/new.html.erb within layouts/application
+  [1m[36mEventVenue Load (0.2ms)[0m  [1m[34mSELECT "event_venues".* FROM "event_venues"[0m
+  ↳ app/views/events/_form.html.erb:22
+  Rendered events/_form.html.erb (10.5ms)
+  Rendered events/new.html.erb within layouts/application (12.8ms)
+  Rendered devise/menu/_registration_items.html.erb (0.7ms)
+  Rendered shopping_carts/_shopping_cart.html.erb (1.8ms)
+  Rendered devise/menu/_login_items.html.erb (0.8ms)
+Completed 200 OK in 111ms (Views: 105.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events/css/custom.css" for 127.0.0.1 at 2019-05-31 17:04:30 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/events/css/custom.css"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2019-05-31 17:05:18 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vawohl/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (start_date >= '2019-05-31 21:05:19.151847')[0m
+  ↳ app/views/home/index.html.erb:23
+  [1m[36mEventVenue Load (0.3ms)[0m  [1m[34mSELECT  "event_venues".* FROM "event_venues" WHERE "event_venues"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:27
+  [1m[36mEventVenue Load (0.2ms)[0m  [1m[34mSELECT  "event_venues".* FROM "event_venues" WHERE "event_venues"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:27
+  [1m[36mEventVenue Load (0.1ms)[0m  [1m[34mSELECT  "event_venues".* FROM "event_venues" WHERE "event_venues"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:27
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:41
+  Rendered home/index.html.erb within layouts/application (110.0ms)
+  Rendered devise/menu/_registration_items.html.erb (0.6ms)
+  Rendered shopping_carts/_shopping_cart.html.erb (5.8ms)
+  Rendered devise/menu/_login_items.html.erb (0.8ms)
+Completed 200 OK in 1434ms (Views: 1407.0ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/css/custom.css" for 127.0.0.1 at 2019-05-31 17:05:20 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/custom.css"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/events/new" for 127.0.0.1 at 2019-05-31 17:05:25 -0400
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vawohl/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering events/new.html.erb within layouts/application
+  [1m[36mEventVenue Load (0.4ms)[0m  [1m[34mSELECT "event_venues".* FROM "event_venues"[0m
+  ↳ app/views/events/_form.html.erb:22
+  Rendered events/_form.html.erb (104.3ms)
+  Rendered events/new.html.erb within layouts/application (106.3ms)
+  Rendered devise/menu/_registration_items.html.erb (0.7ms)
+  Rendered shopping_carts/_shopping_cart.html.erb (1.1ms)
+  Rendered devise/menu/_login_items.html.erb (0.9ms)
+Completed 200 OK in 192ms (Views: 183.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-05-31 17:06:32 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vawohl/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (start_date >= '2019-05-31 21:06:32.680702')[0m
+  ↳ app/views/home/index.html.erb:23
+  [1m[36mEventVenue Load (0.3ms)[0m  [1m[34mSELECT  "event_venues".* FROM "event_venues" WHERE "event_venues"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:27
+  [1m[36mEventVenue Load (0.1ms)[0m  [1m[34mSELECT  "event_venues".* FROM "event_venues" WHERE "event_venues"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:27
+  [1m[36mEventVenue Load (0.1ms)[0m  [1m[34mSELECT  "event_venues".* FROM "event_venues" WHERE "event_venues"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:27
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:41
+  Rendered home/index.html.erb within layouts/application (81.6ms)
+  Rendered devise/menu/_registration_items.html.erb (0.6ms)
+  Rendered shopping_carts/_shopping_cart.html.erb (3.5ms)
+  Rendered devise/menu/_login_items.html.erb (0.9ms)
+Completed 200 OK in 541ms (Views: 516.7ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/css/custom.css" for 127.0.0.1 at 2019-05-31 17:06:33 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/custom.css"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/events/new" for 127.0.0.1 at 2019-05-31 17:06:36 -0400
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vawohl/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering events/new.html.erb within layouts/application
+  [1m[36mEventVenue Load (0.3ms)[0m  [1m[34mSELECT "event_venues".* FROM "event_venues"[0m
+  ↳ app/views/events/_form.html.erb:22
+  Rendered events/_form.html.erb (35.4ms)
+  Rendered events/new.html.erb within layouts/application (38.6ms)
+  Rendered devise/menu/_registration_items.html.erb (0.8ms)
+  Rendered shopping_carts/_shopping_cart.html.erb (1.3ms)
+  Rendered devise/menu/_login_items.html.erb (1.3ms)
+Completed 200 OK in 160ms (Views: 144.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2019-05-31 17:08:35 -0400
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vawohl/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering events/new.html.erb within layouts/application
+  [1m[36mEventVenue Load (0.2ms)[0m  [1m[34mSELECT "event_venues".* FROM "event_venues"[0m
+  ↳ app/views/events/_form.html.erb:21
+  Rendered events/_form.html.erb (9.6ms)
+  Rendered events/new.html.erb within layouts/application (11.6ms)
+  Rendered devise/menu/_registration_items.html.erb (0.6ms)
+  Rendered shopping_carts/_shopping_cart.html.erb (1.0ms)
+  Rendered devise/menu/_login_items.html.erb (1.0ms)
+Completed 200 OK in 119ms (Views: 113.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events/css/custom.css" for 127.0.0.1 at 2019-05-31 17:08:35 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/events/css/custom.css"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2019-05-31 17:09:08 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vawohl/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (start_date >= '2019-05-31 21:09:08.784724')[0m
+  ↳ app/views/home/index.html.erb:23
+  [1m[36mEventVenue Load (0.3ms)[0m  [1m[34mSELECT  "event_venues".* FROM "event_venues" WHERE "event_venues"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:27
+  [1m[36mEventVenue Load (0.2ms)[0m  [1m[34mSELECT  "event_venues".* FROM "event_venues" WHERE "event_venues"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:27
+  [1m[36mEventVenue Load (0.1ms)[0m  [1m[34mSELECT  "event_venues".* FROM "event_venues" WHERE "event_venues"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:27
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:41
+  Rendered home/index.html.erb within layouts/application (83.5ms)
+  Rendered devise/menu/_registration_items.html.erb (0.8ms)
+  Rendered shopping_carts/_shopping_cart.html.erb (3.6ms)
+  Rendered devise/menu/_login_items.html.erb (1.2ms)
+Completed 200 OK in 512ms (Views: 489.9ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/css/custom.css" for 127.0.0.1 at 2019-05-31 17:09:09 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/custom.css"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/events/new" for 127.0.0.1 at 2019-05-31 17:09:13 -0400
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vawohl/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering events/new.html.erb within layouts/application
+  [1m[36mEventVenue Load (0.3ms)[0m  [1m[34mSELECT "event_venues".* FROM "event_venues"[0m
+  ↳ app/views/events/_form.html.erb:21
+  Rendered events/_form.html.erb (18.7ms)
+  Rendered events/new.html.erb within layouts/application (20.5ms)
+  Rendered devise/menu/_registration_items.html.erb (1.0ms)
+  Rendered shopping_carts/_shopping_cart.html.erb (1.1ms)
+  Rendered devise/menu/_login_items.html.erb (0.8ms)
+Completed 200 OK in 105ms (Views: 97.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2019-05-31 17:13:17 -0400
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vawohl/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering events/new.html.erb within layouts/application
+  [1m[36mEventVenue Load (0.2ms)[0m  [1m[34mSELECT "event_venues".* FROM "event_venues"[0m
+  ↳ app/views/events/_form.html.erb:27
+  Rendered events/_form.html.erb (36.8ms)
+  Rendered events/new.html.erb within layouts/application (39.9ms)
+  Rendered devise/menu/_registration_items.html.erb (1.0ms)
+  Rendered shopping_carts/_shopping_cart.html.erb (1.0ms)
+  Rendered devise/menu/_login_items.html.erb (0.8ms)
+Completed 200 OK in 128ms (Views: 122.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events/css/custom.css" for 127.0.0.1 at 2019-05-31 17:13:18 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/events/css/custom.css"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/events" for 127.0.0.1 at 2019-05-31 17:15:57 -0400
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+bpnUcMfHxKN3XcfrGIW4rx0CO0XcLcJyszbTglEiRRyRbDCLPAx5CTEOKr51X7uIk7LznZCSjMju+J5Z8RnAA==", "event"=>{"name"=>"Dinamita Chow", "description"=>"Something", "start_date(1i)"=>"2024", "start_date(2i)"=>"12", "start_date(3i)"=>"31", "event_venue_id"=>"3", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007f817618eeb8 @tempfile=#<Tempfile:/tmp/RackMultipart20190531-4629-1t5rbg8.jpg>, @original_filename="dinamita.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"event[image]\"; filename=\"dinamita.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Event"}
+Unpermitted parameter: :image
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vawohl/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Unpermitted parameter: :image
+Unpermitted parameter: :image
+  [1m[36mEventVenue Load (0.2ms)[0m  [1m[34mSELECT  "event_venues".* FROM "event_venues" WHERE "event_venues"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:29
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:32
+  [1m[36mEvent Create (37.3ms)[0m  [1m[32mINSERT INTO "events" ("name", "description", "start_date", "event_venue_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Dinamita Chow"], ["description", "Something"], ["start_date", "2024-12-31"], ["event_venue_id", 3], ["created_at", "2019-05-31 21:15:57.599130"], ["updated_at", "2019-05-31 21:15:57.599130"]]
+  ↳ app/controllers/events_controller.rb:32
+  [1m[35m (74.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:32
+Redirected to http://localhost:3000/events/4
+Completed 302 Found in 128ms (ActiveRecord: 112.0ms)
+
+
+Started GET "/events/4" for 127.0.0.1 at 2019-05-31 17:15:57 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:69
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vawohl/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mTicketType Load (0.2ms)[0m  [1m[34mSELECT "ticket_types".* FROM "ticket_types" WHERE "ticket_types"."event_id" = ?[0m  [["event_id", 4]]
+  ↳ app/views/events/show.html.erb:22
+  [1m[36mEventVenue Load (0.1ms)[0m  [1m[34mSELECT  "event_venues".* FROM "event_venues" WHERE "event_venues"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:38
+  Rendered events/show.html.erb within layouts/application (41.1ms)
+  Rendered devise/menu/_registration_items.html.erb (0.7ms)
+  Rendered shopping_carts/_shopping_cart.html.erb (1.2ms)
+  Rendered devise/menu/_login_items.html.erb (0.9ms)
+Completed 200 OK in 182ms (Views: 111.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/events/css/custom.css" for 127.0.0.1 at 2019-05-31 17:15:58 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/events/css/custom.css"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/events/new" for 127.0.0.1 at 2019-05-31 17:16:09 -0400
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vawohl/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering events/new.html.erb within layouts/application
+  [1m[36mEventVenue Load (0.2ms)[0m  [1m[34mSELECT "event_venues".* FROM "event_venues"[0m
+  ↳ app/views/events/_form.html.erb:27
+  Rendered events/_form.html.erb (21.6ms)
+  Rendered events/new.html.erb within layouts/application (26.3ms)
+  Rendered devise/menu/_registration_items.html.erb (1.1ms)
+  Rendered shopping_carts/_shopping_cart.html.erb (1.2ms)
+  Rendered devise/menu/_login_items.html.erb (0.8ms)
+Completed 200 OK in 101ms (Views: 95.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events/4" for 127.0.0.1 at 2019-05-31 17:16:20 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:69
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vawohl/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mTicketType Load (0.2ms)[0m  [1m[34mSELECT "ticket_types".* FROM "ticket_types" WHERE "ticket_types"."event_id" = ?[0m  [["event_id", 4]]
+  ↳ app/views/events/show.html.erb:22
+  [1m[36mEventVenue Load (0.1ms)[0m  [1m[34mSELECT  "event_venues".* FROM "event_venues" WHERE "event_venues"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:38
+  Rendered events/show.html.erb within layouts/application (17.9ms)
+  Rendered devise/menu/_registration_items.html.erb (0.9ms)
+  Rendered shopping_carts/_shopping_cart.html.erb (1.1ms)
+  Rendered devise/menu/_login_items.html.erb (0.9ms)
+Completed 200 OK in 114ms (Views: 105.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-05-31 17:16:25 -0400
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (start_date >= '2019-05-31 21:16:25.598794')[0m
+  ↳ app/views/home/index.html.erb:23
+  [1m[36mEventVenue Load (0.2ms)[0m  [1m[34mSELECT  "event_venues".* FROM "event_venues" WHERE "event_venues"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:27
+  [1m[36mEventVenue Load (0.2ms)[0m  [1m[34mSELECT  "event_venues".* FROM "event_venues" WHERE "event_venues"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:27
+  [1m[36mEventVenue Load (0.3ms)[0m  [1m[34mSELECT  "event_venues".* FROM "event_venues" WHERE "event_venues"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:27
+  [1m[36mCACHE EventVenue Load (0.0ms)[0m  [1m[34mSELECT  "event_venues".* FROM "event_venues" WHERE "event_venues"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:27
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:41
+  Rendered home/index.html.erb within layouts/application (11.1ms)
+  Rendered devise/menu/_registration_items.html.erb (0.6ms)
+  Rendered shopping_carts/_shopping_cart.html.erb (0.9ms)
+  Rendered devise/menu/_login_items.html.erb (1.3ms)
+Completed 200 OK in 131ms (Views: 87.3ms | ActiveRecord: 1.1ms)
+
+
