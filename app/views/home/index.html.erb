@@ -26,6 +26,13 @@
                 <td><%=event.description%></td>
                 <td><%=event.event_venue.name%></td>
                 <td><%=event.start_date.in_time_zone()%></td>
+                <% if event.image.attached? %>
+                    <td>
+                      <%= image_tag(event.image, size: '200x100') %> 
+                    </td>
+                <% else %>
+                    <td> No image uploaded </td>
+                <% end %>                    
               </tr>
             <% end %>
             </tbody>
