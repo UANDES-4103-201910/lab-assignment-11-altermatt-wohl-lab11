@@ -21,12 +21,17 @@ class ShoppingCartsController < ApplicationController
   end
 
   def remove_ticket
-    # TODO
+     ticket = session[:shopping_cart]
+     item = ticket.TicketType.find(params[:ticket_type_id])
+     if item?
+     	session[:shopping_cart].delete(item)
+     end
+     redirect_to "/"
   end
 
-  def index
+  #def index
     # Not much to do here...
-  end
+  #end
 
   private
 
