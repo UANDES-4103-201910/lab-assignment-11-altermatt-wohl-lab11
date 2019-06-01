@@ -29,9 +29,11 @@ class ShoppingCartsController < ApplicationController
      redirect_to "/"
   end
 
-  #def index
+  def checkout
+	ticket = session[:shopping_cart].TicketType.find(params[:ticket_type_id])
+	return ticket	
     # Not much to do here...
-  #end
+  end
 
   private
 
